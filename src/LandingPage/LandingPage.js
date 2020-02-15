@@ -1,8 +1,15 @@
 import React from 'react';
 import TopNav from './TopNav/TopNav';
+import logo from '../assets/logo.png';
+import styles from './LandingPage.module.css';
 
 const LandingPage = () => {
-  return <TopNav />;
+  return (
+    <div>
+      <TopNav />
+      <img src={logo} className={styles.logo} alt='logo' />
+    </div>
+  );
 };
 
 export default LandingPage;
