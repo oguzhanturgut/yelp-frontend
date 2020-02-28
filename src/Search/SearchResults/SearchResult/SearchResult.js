@@ -16,8 +16,8 @@ const SearchResult = () => {
         <h2 className='subtitle'>Burger Place</h2>
         <BusinessRating />
         <p>
-          $$ <span class='tag'>Fast Food</span>
-          <span class='tag'>Burger</span>
+          $$ <span className='tag'>Fast Food</span>
+          <span className='tag'>Burger</span>
         </p>
       </div>
       <div className={styles['contact-info']}>

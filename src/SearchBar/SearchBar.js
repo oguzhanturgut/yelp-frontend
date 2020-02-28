@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
 const SearchBar = props => {
+  const [term, setTerm] = useState(props.term || '');
+  const [location, setLocation] = useState(props.location || '');
   const sizeClass = props.small ? '' : 'is-medium';
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (typeof props.search === 'function') {
+      props.search(term, location);
+    }
+  };
+
   return (
-    <div className='field has-addons'>
+    <form className='field has-addons' onSubmit={handleSubmit}>
       <p className='control'>
         <button className={`button is-static ${sizeClass}`}>Search</button>
       </p>
@@ -13,16 +22,18 @@ const SearchBar = props => {
         <input
           className={`input ${sizeClass} ${styles['input-control']}`}
           type='text'
+          onChange={e => setTerm(e.target.value)}
           placeholder='Burgers, barbers, spas, handymen'
         />
       </p>
-      <p className='control'>
-        <button className={`button is-static ${sizeClass}`}>NEAR</button>
-      </p>
+      <div className='control'>
+        <div className={`button is-static ${sizeClass}`}>NEAR</div>
+      </div>
       <p className='control'>
         <input
           className={`input ${sizeClass} ${styles['input-control']}`}
           type='text'
+          onChange={e => setLocation(e.target.value)}
           placeholder='Where'
         />
       </p>
@@ -31,7 +42,7 @@ const SearchBar = props => {
           <i className='fas fa-search'></i>
         </span>
       </button>
-    </div>
+    </form>
   );
 };
 
