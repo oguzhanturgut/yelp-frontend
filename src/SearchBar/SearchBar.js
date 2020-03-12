@@ -24,6 +24,7 @@ const SearchBar = props => {
           type='text'
           onChange={e => setTerm(e.target.value)}
           placeholder='Burgers, barbers, spas, handymen'
+          value={term}
         />
       </p>
       <div className='control'>
@@ -35,6 +36,7 @@ const SearchBar = props => {
           type='text'
           onChange={e => setLocation(e.target.value)}
           placeholder='Where'
+          value={location}
         />
       </p>
       <button className={`button ${sizeClass} ${styles['search-button']}`}>

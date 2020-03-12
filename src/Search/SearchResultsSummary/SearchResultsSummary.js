@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './SearchResultsSummary.module.css';
 
-const SearchResultsSummary = () => {
+const SearchResultsSummary = props => {
   return (
     <div className={styles.container}>
       <div className={styles['search-summary']}>
         <h1 className='subtitle'>
-          <strong>burgers</strong> berlin
+          <strong>{props.term}</strong> {props.location}
         </h1>
         <p>Showing 1-20 out of 543 results</p>
       </div>
