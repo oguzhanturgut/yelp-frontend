@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SearchResult.module.css';
-import BusinessRating from './BusinessRating/BusinessRating';
+import BusinessRating from '../../../BusinessRating/BusinessRating';
 
 const SearchResult = () => {
   return (
