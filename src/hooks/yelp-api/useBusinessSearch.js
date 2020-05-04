@@ -8,17 +8,16 @@ export function useBusinessSearch(term, location) {
 
   useEffect(() => {
     setBusinesses([]);
-    const fetchData = async () => {
+    (async () => {
       try {
-        const result = await api.get('businesses/search', searchParams);
-        const data = await result.json;
+        const result = await api.get('/businesses/search', searchParams);
+        const data = await result.json();
         setBusinesses(data.businesses);
         setTotalResults(data.total);
       } catch (e) {
         console.error(e);
       }
-    };
-    fetchData();
+    })();
   }, [searchParams]);
 
   return [businesses, totalResults, searchParams, setSearchParams];
