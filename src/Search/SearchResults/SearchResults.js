@@ -13,10 +13,10 @@ const SearchResults = props => {
                                                                  business={el}/>);
 
   return (
-    <div className={styles['search-results']}>
-      {searchResults}
-    </div>
+      <div className={styles['search-results']}>
+        {searchResults}
+      </div>
   );
-  };
+};
 
 export default SearchResults;

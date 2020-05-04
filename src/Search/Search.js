@@ -7,7 +7,6 @@ import SearchResults from './SearchResults/SearchResults';
 
 import {useBusinessSearch} from "../hooks/yelp-api/useBusinessSearch";
 
-
 const Search = () => {
     const {location} = useReactRouter();
     const params = new URLSearchParams(location.search);
@@ -15,7 +14,6 @@ const Search = () => {
     const locationParam = params.get('find_loc');
 
   const [businesses, totalResults, searchParams, setSearchParams] = useBusinessSearch(term, locationParam);
-
   return (
     <div>
       <NavBar term={term} location={locationParam}/>
